@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>GetSchwifty.com</title>
+		<link rel="stylesheet" href="css/WebsiteStyle.css">
+		<link rel="stylesheet" href="css/ControllersStyle.css">
+		<link rel="stylesheet" href="css/ContainerStyle.css">
+		<script type="text/javascript" src="src/View/PopUp/LeaderBoardPopUp.js"></script>
+		<script type="text/javascript" src="src/View/PopUp/InstructionsPopup.js"></script>
+		<script type="text/javascript" src="src/View/AddPlayer.js"></script>
+		<script src="src/Controller/app.js" type="module"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<<div id="guide"><h1>GetSchwifty</h1></div>
+				<img src="img/GetSchwifty.jpg" alt="GetSchwifty">
+			</div><!--id="header"-->
+			<div class="container">
+				<div class="controls">
+					<div class="controls__main">
+						<button id="instructions" title="Instructions" onclick="InstructionsDisplayPopup()">Instructions</button>
+						<button id="leaderboard" title="Leaderboard" onclick="ShowLeaderboard()">Leaderboard</button>
+					</div>
+				</div>
+			</div>
+			<div id="content">
+				<!--#this is the content of GetSchwifty -->
+	<table id="table">
+		<div id="GetSchwifty-puzzle">
+			<div class="puzzles-container"></div>
+			<div class="button-container"></div>
+			<div class="time-container" id="time"></div>
+			<div class="moves-container" id="moves"></div>
+		</div>
+	</table>
+			</div><!--content-->
+			<div id="footer">
+				<p>GetSchwifty</p>
+			</div> <!--footer-->
+		</div><!--wrapper-->
+		<div class="AddPlayerPopup">
+			<header class="popupHeader">Leaderboard
+				<a href="#" class="cancelButton" data-toggle="tooltip" title="Cancel" onclick="AddPlayerClosePopup()"><span class="glyphicon glyphicon-remove">X</span></a>
+			</header>
+			<section class="AddPlayerPopupContent">
+				<p class="deleteMessage">
+			</section>
+			<footer class="popupFooter">
+                    <span>
+                        <button id="okExitPlayer" type="submit" class="deletebuttons" data-toggle="tooltip" title="Exit" onclick="AddPlayerClosePopup()">
+                            Exit</button></span>
+			</footer>
+		</div>
+		<div class="LeadBoardPopup">
+			<header class="popupHeader">Leaderboard
+				<p>🏆 Best results of GetSchwifty</p>
+				<a href="#" class="cancelButton" data-toggle="tooltip" title="Cancel" onclick="LeaderboardClosePopup()"><span class="glyphicon glyphicon-remove">X</span></a>
+			</header>
+			<section class="popupContent">
+				<p class="deleteMessage">
+			</section>
+			<footer class="popupFooter">
+                    <span>
+                        <button id="okExit" type="submit" class="deletebuttons" data-toggle="tooltip" title="Exit" onclick="LeaderboardClosePopup()">
+                            Exit</button></span>
+			</footer>
+		</div>
+		<div class="InstructionsPopup">
+			<header class="popupHeader">Instructions
+				<a href="#" class="cancelButton" data-toggle="tooltip" title="Cancel" onclick="InstructionsClosePopup()"><span class="glyphicon glyphicon-remove">X</span></a>
+			</header>
+			<section class="popupContent">
+				<p class="deleteMessage"><p> GetSchwifty</p>
+				<p>   משחק חשיבה המכיל לוח ריבועי, וממולא בריבועים בגודל שווה.
+					לכל ריבוע, חוץ מריבוע אחד יש מספר שמזהה אותו, והריבועים מסודרים בצורה אקראית לחלוטין.
+					מטרת המשחק היא לסדר את הלוח מ-1 עד המשבצת הריקה. לחיצה על ריבוע שנמצא בסמוך לריבוע ריק גורמת להם להחליף מקומות.
+					התוצאה המתקבלת צריכה להיות כזו: </p>>
+				<div><img src="./img/300px-15-puzzle.jpg" alt="GetSchwifty"></div></p>
+			</section>
+			<footer class="popupFooter">
+                    <span>
+                        <button id="okDelete" type="submit" class="deletebuttons" data-toggle="tooltip" title="Exit" onclick="InstructionsClosePopup();">
+                            Exit</button></span>
+			</footer>
+		</div>
+	</body>
+</html>
