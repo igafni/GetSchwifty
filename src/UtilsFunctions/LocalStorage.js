@@ -13,18 +13,29 @@ function SaveToLocal(level, score, name,time) {
     if (ScoreJson === null) {
         ScoreObject = [jsonObject];
         localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
-        return true;
+    } else {
+        var isInList = false;
+        ScoreObject = JSON.parse(ScoreJson);
+        for (var value of ScoreObject) {
+            if (value["name"] === jsonObject["name"] && jsonObject["level"]===value["level"]){
+                isInList = true;
+            }
+        }
+        if (!isInList) {
+            ScoreObject.push(jsonObject);
+            localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
+            return true;
+        } else {
+            return false;
+        }
     }
-    ScoreObject = JSON.parse(ScoreJson);
-    ScoreObject.push(jsonObject);
-    localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
-    return true;
 }
 
 //  Remove the Players json data from local storage.
 function RemoveFromLocal(jsonObject) {
     var ScoreJson = localStorage.getItem("ScoreJson");
     var ScoreObject = JSON.parse(ScoreJson);
+    //var index = ScoreObject.indexOf(jsonObject);
     var index =0;
     for (var dict in ScoreObject)
     {
