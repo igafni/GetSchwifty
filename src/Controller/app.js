@@ -1,7 +1,12 @@
 import { Game } from './components/game.js';
 import {Timer} from "../UtilsFunctions/Timer.js";
+import {AddFirstLeadBoardResult} from "../UtilsFunctions/LocalStorage.js";
+
+//Adding first LeadBoard Results. Remove if you want clean LeadBoard.
+AddFirstLeadBoardResult();
 
 var timer = new Timer();
+
 (() => {
   function init() {
     addGame();

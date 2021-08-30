@@ -38,6 +38,7 @@ function LeaderboardClosePopup(){
 
     document.getElementsByClassName('LeadBoardPopup')[0].style.display='';
 }
+
 function ShowLeaderboard() {
     if (!document.querySelector('.leaderboard-table'))
         drawLeaderboard();
@@ -46,6 +47,7 @@ function ShowLeaderboard() {
         document.getElementsByClassName('LeadBoardPopup')[0].style.display = 'block';
     }
 }
+
 function createElement(tagName, props = {}, innerText) {
     const $el = document.createElement(tagName);
 

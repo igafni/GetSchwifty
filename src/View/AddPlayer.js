@@ -22,6 +22,7 @@ function AddPlayerToLeadBoard(numberOfMoves,time,boardSize) {
     document.getElementsByClassName('AddPlayerPopupContent')[0].append(submitResultEl);
     document.getElementsByClassName('AddPlayerPopup')[0].style.display = 'block';
 }
+
 function CheckIfNewRecord(numberOfMoves,time,boardSize) {
     var ScoreJson = localStorage.getItem("ScoreJson");
     var ScoreObject;
@@ -52,6 +53,7 @@ function CheckIfNewRecord(numberOfMoves,time,boardSize) {
     alert("Not New Record");
     return false;
 }
+
 function RegisterPlayer(submitResultEl,numberOfMoves,time,boardSize) {
     {
         let playerName = 'Unknown Hero';
@@ -67,4 +69,5 @@ function AddPlayerClosePopup(){
 
     document.getElementsByClassName('AddPlayerPopup')[0].style.display='';
 }
+
 export {CheckIfNewRecord}

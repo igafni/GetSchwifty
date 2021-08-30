@@ -1,3 +1,4 @@
+//  Save the Players json data to local storage.
 function SaveToLocal(level, score, name,time) {
     const today = new Date();
     var jsonObject = {
@@ -12,29 +13,18 @@ function SaveToLocal(level, score, name,time) {
     if (ScoreJson === null) {
         ScoreObject = [jsonObject];
         localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
-    } else {
-        var isInList = false;
-        ScoreObject = JSON.parse(ScoreJson);
-        for (var value of ScoreObject) {
-            if (value["name"] === jsonObject["name"]){
-                isInList = true;
-            }
-        }
-        if (!isInList) {
-            ScoreObject.push(jsonObject);
-            localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
-            alert("Kolololo Add Player to ScoreBoard");
-            return true;
-        } else {
-            alert("Player already added");
-            return false;
-        }
+        return true;
     }
+    ScoreObject = JSON.parse(ScoreJson);
+    ScoreObject.push(jsonObject);
+    localStorage.setItem("ScoreJson", JSON.stringify(ScoreObject));
+    return true;
 }
+
+//  Remove the Players json data from local storage.
 function RemoveFromLocal(jsonObject) {
     var ScoreJson = localStorage.getItem("ScoreJson");
     var ScoreObject = JSON.parse(ScoreJson);
-    //var index = ScoreObject.indexOf(jsonObject);
     var index =0;
     for (var dict in ScoreObject)
     {
@@ -48,6 +38,7 @@ function RemoveFromLocal(jsonObject) {
         index++;
     }
 }
+
 function AddFirstLeadBoardResult()
 {
     SaveToLocal("2","1","Gafni","1");
@@ -59,4 +50,4 @@ function AddFirstLeadBoardResult()
     SaveToLocal("8","250",":)","600");
 }
 
-export {SaveToLocal,RemoveFromLocal}
+export {SaveToLocal,RemoveFromLocal,AddFirstLeadBoardResult}
