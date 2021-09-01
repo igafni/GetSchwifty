@@ -1,4 +1,4 @@
-/* This section is used by the fifteen game. */
+
 img {
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -17,11 +17,8 @@ img {
   height: 50px;
   border: 2px solid #222;
   text-align: center;
-  /* Webkit (Chrome and Safari) */
   background: -webkit-gradient(linear, top, bottom,color-stop(15%, white),color-stop(80%, darkgray),);
-  /* Mozilla */
   background: -moz-linear-gradient(top, white 15%, darkgray 90%);  
-  /* Internet Explorer */
   background: linear-gradient(90deg, white 15%, darkgray 90%);
   color: #000;
   cursor: pointer;
@@ -34,11 +31,8 @@ img {
 }
 #time {
   border: 2px solid #222;
-  /* Webkit (Chrome and Safari) */
   background: -webkit-gradient(linear, top, bottom,color-stop(15%, white),color-stop(80%, darkgray),);
-  /* Mozilla */
   background: -moz-linear-gradient(top, white 15%, darkgray 90%);
-  /* Internet Explorer */
   background: linear-gradient(90deg, white 15%, darkgray 90%);
   font-weight: bold;
   padding: 2px 5px;
@@ -46,17 +40,13 @@ img {
 }
 #moves {
   border: 2px solid #222;
-  /* Webkit (Chrome and Safari) */
   background: -webkit-gradient(linear, top, bottom,color-stop(15%, white),color-stop(80%, darkgray),);
-  /* Mozilla */
   background: -moz-linear-gradient(top, white 15%, darkgray 90%);  
-  /* Internet Explorer */
   background: linear-gradient(90deg, white 15%, darkgray 90%);
   font-weight: bold;
   padding: 2px 5px;
   color: #000;
 }
-/* end fifteen game */
 
 body { 
   background: #fff;
